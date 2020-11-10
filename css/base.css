@@ -39,6 +39,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   border-bottom: none;
   margin-top: 15px;
   margin-bottom:0;
+  text-indent: 10px;
 }
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: none;
@@ -66,7 +67,13 @@ label{
 .sidenav{
   z-index:0;
 }
-
+.grey-brick{
+    background: #9c9aa0;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: calc(33.3333333333% - 1.5rem);
+}
 li.logo{
   padding: 30px 0;
   margin-bottom: 30px;
@@ -132,6 +139,8 @@ li.logo{
     letter-spacing: 1.1px;
     max-width: 50%;
   }
+  .grid-item { width: 200px; margin-bottom:10px;}
+  .grid { width: 210vh; height:100% !important}
 
   .perfil{
       width: 300px;
@@ -166,7 +175,16 @@ li.logo{
     background: rgba(0,0,0,0.65);
     color: white;
 }
-
+#cform {
+  position: relative;
+  background: url(/images/contacto.jpg);
+  background-position: left;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 350px;
+  margin-left: 0;
+  object-fit: cover;
+}
 
   .section.micro {
     width: 500px;
@@ -217,12 +235,18 @@ li.logo{
     background: url(/images/fondo-logo.png) no-repeat 250px center #FFFFFF;
     background-size: cover;
   }
-  .section:nth-child(11),  .section:nth-child(12) {
+  .section:nth-child(11) {
     padding:0 0 0 250px;
+    width: calc(150vw - 180px);
+  }
+
+  .section:nth-child(12) {
+    padding:0 0 0 250px;
+    width: 120vw; 
   }
 
   .sections {
-    width: calc(1100vw + 1500px);
+    width: calc(1200vw + 1000px);
     height: 100%;
   }
   .section__title {
@@ -278,8 +302,112 @@ li.logo{
   background: white;
 }
 
+.tile {
+  align-items: stretch;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+}
+.tile img{
+  width:100%;
+}
+.tile.is-ancestor {
+  margin-left: -5px;
+  margin-right:  -5px;
+  margin-top:  -5px;
+}
+
+.tile.is-ancestor:last-child {
+  margin-bottom: 5px;
+}
+
+.tile.is-ancestor:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.tile.is-child {
+  margin: 0 !important;
+}
+
+.tile.is-parent {
+  padding: 5px;
+}
+
+.tile.is-vertical {
+  flex-direction: column;
+}
+
+.tile.is-vertical > .tile.is-child:not(:last-child) {
+  margin-bottom: 10px !important;
+}
+
+@media screen and (min-width: 769px), print {
+  .tile:not(.is-child) {
+    display: flex;
+  }
+  .tile.is-1 {
+    flex: none;
+    width: 8.33333%;
+  }
+  .tile.is-2 {
+    flex: none;
+    width: 16.66667%;
+  }
+  .tile.is-3 {
+    flex: none;
+    width: 25%;
+  }
+  .tile.is-4 {
+    flex: none;
+    width: 33.33333%;
+  }
+  .tile.is-5 {
+    flex: none;
+    width: 41.66667%;
+  }
+  .tile.is-6 {
+    flex: none;
+    width: 50%;
+  }
+  .tile.is-7 {
+    flex: none;
+    width: 58.33333%;
+  }
+  .tile.is-8 {
+    flex: none;
+    width: 66.66667%;
+  }
+  .tile.is-9 {
+    flex: none;
+    width: 75%;
+  }
+  .tile.is-10 {
+    flex: none;
+    width: 83.33333%;
+  }
+  .tile.is-11 {
+    flex: none;
+    width: 91.66667%;
+  }
+  .tile.is-12 {
+    flex: none;
+    width: 100%;
+  }
+}
+
+
 @media only screen and (min-width: 993px){
   .container {
-      width: 90%;
+      width: 97.5%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .container {
+      max-width: fit-content;
   }
 }

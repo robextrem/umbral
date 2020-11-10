@@ -23,7 +23,12 @@ $(document).ready(function(){
       .to("#js-slideContainer", 1,   {x: "-80%"}, "label4")
       .from(titles[4], 0.5, {}, "label4+=0.5");
     
-    
+      $('.grid').masonry({
+        gutter:10,
+        itemSelector: '.grid-item',
+        columnWidth: 200
+      });
+
       // create scene to pin and link animation
       new ScrollMagic.Scene({
         triggerElement: "#js-wrapper",
